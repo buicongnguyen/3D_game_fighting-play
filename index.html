@@ -13,8 +13,8 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23dbe6ad' d='M20 2 38 26 20 19 2 26Z'/%3E%3Cpath stroke='%23dbe6ad' d='m20 19-3 15 7 4'/%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-BikEN9VU.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BcXGE8WS.css">
+    <script type="module" crossorigin src="./assets/index-CLqgSrw1.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BNqbUww0.css">
   </head>
   <body>
     <canvas id="game" aria-label="KITEFALL 3D game world"></canvas>
@@ -78,6 +78,8 @@
             MISSION BRIEF <span>+</span>
           </button>
         </div>
+        <button id="continue-operation" class="text-button hidden"></button>
+        <p id="operation-note" class="operation-note hidden"></p>
         <div class="input-note">
           <span class="mouse-icon"></span> MOUSE + KEYBOARD
           <span>·</span> HEADPHONES RECOMMENDED
@@ -123,7 +125,7 @@
           >KESTREL K-9 <span class="muted">/</span> AERIAL INFILTRATION
           SYSTEM</span
         ><span>SCOUT <i>→</i> STRIKE <i>→</i> RESCUE <i>→</i> EXTRACT</span
-        ><span>BUILD 1.0</span>
+        ><span id="build-version"></span>
       </footer>
     </main>
     <div id="hud" class="hidden">
@@ -154,6 +156,7 @@
           OPERATION OBJECTIVES <span id="objective-total">0 / 5</span>
         </div>
         <div id="objective-list"></div>
+        <div id="rescue-status" class="rescue-status">TEAM 0/3 ABOARD</div>
         <div id="extract-objective" class="extract-objective">
           ◇ &nbsp; Extract at the south beacon
         </div>
