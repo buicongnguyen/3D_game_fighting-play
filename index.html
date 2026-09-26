@@ -13,7 +13,7 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23dbe6ad' d='M20 2 38 26 20 19 2 26Z'/%3E%3Cpath stroke='%23dbe6ad' d='m20 19-3 15 7 4'/%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-DHpnQVr2.js"></script>
+    <script type="module" crossorigin src="./assets/index-T3MXdraF.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BgROebM0.css">
   </head>
   <body>
@@ -137,9 +137,9 @@
         </div>
         <div class="compass">
           <div class="compass-ticks">
-            W &nbsp; · &nbsp; · &nbsp; NW &nbsp; · &nbsp; · &nbsp;
-            <b id="heading">000</b> &nbsp; · &nbsp; · &nbsp; NE &nbsp; · &nbsp;
-            · &nbsp; E
+            <span>W</span> &nbsp; · &nbsp; · &nbsp; <span>NW</span> &nbsp; ·
+            &nbsp; · &nbsp; <b id="heading">000</b> &nbsp; · &nbsp; · &nbsp;
+            <span>NE</span> &nbsp; · &nbsp; · &nbsp; <span>E</span>
           </div>
           <i>▴</i><small id="alert-label">UNDETECTED</small>
         </div>
@@ -230,7 +230,14 @@
         </div>
       </div>
     </div>
-    <div id="overlay" class="hidden"><section id="panel"></section></div>
+    <div id="overlay" class="hidden">
+      <section
+        id="panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Operation menu"
+      ></section>
+    </div>
     <aside id="quick-help" class="hidden"></aside>
     <div id="fatal" class="hidden" role="alert"></div>
   </body>
