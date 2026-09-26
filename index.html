@@ -13,8 +13,8 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23dbe6ad' d='M20 2 38 26 20 19 2 26Z'/%3E%3Cpath stroke='%23dbe6ad' d='m20 19-3 15 7 4'/%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-C-oOMBLE.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CMtd8JHB.css">
+    <script type="module" crossorigin src="./assets/index-Bu5l2Al0.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CTnyxEv_.css">
   </head>
   <body>
     <canvas id="game" aria-label="KITEFALL 3D game world"></canvas>
@@ -181,6 +181,9 @@
         <p>Follow the bearing. Snipe from your kite or land on a coach roof.</p>
       </section>
       <div id="markers"></div>
+      <div id="thermal-status" class="thermal-status">
+        <kbd>T</kbd><span>THERMAL OFF</span>
+      </div>
       <div id="reticle" class="reticle"><i></i><b></b></div>
       <div
         id="structure-hud"
@@ -193,7 +196,8 @@
           <div class="scope-horizontal"></div>
           <div class="scope-vertical"></div>
           <div class="scope-mil">┼<br />┼<br />┼<br />┼</div>
-          <span class="scope-label">LONGWATCH / OPTICAL SYSTEM</span
+          <span id="scope-label" class="scope-label"
+            >LONGWATCH / OPTICAL SYSTEM</span
           ><span id="scope-data">5× &nbsp; RANGE —</span
           ><span class="scope-bottom"
             >SCROLL TO ADJUST &nbsp; / &nbsp; 3×–12×</span
