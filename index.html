@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#142222" />
+    <meta
+      name="description"
+      content="KITEFALL. A four-season commando campaign above Hoshi Valley. Scout, strike, rescue, and bring everyone home."
+    />
+    <title>KITEFALL — Leave no one behind</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23dbe6ad' d='M20 2 38 26 20 19 2 26Z'/%3E%3Cpath stroke='%23dbe6ad' d='m20 19-3 15 7 4'/%3E%3C/svg%3E"
+    />
+    <script type="module" crossorigin src="./assets/index-DHpnQVr2.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BgROebM0.css">
+  </head>
+  <body>
+    <canvas id="game" aria-label="KITEFALL 3D game world"></canvas>
+    <div class="screen-grain"></div>
+    <div id="loading" class="loading-screen">
+      <div class="kite-emblem">
+        <svg viewBox="0 0 100 90">
+          <path d="M50 3 97 64 50 46 3 64Z" />
+          <path class="line" d="M50 46 43 73 57 85" />
+        </svg>
+      </div>
+      <div class="eyebrow">KESTREL DIVISION / FIELD OPERATIONS</div>
+      <h1>KITEFALL</h1>
+      <p id="load-label">Establishing uplink</p>
+      <div class="load-track"><i id="load-progress"></i></div>
+      <span id="load-percent">0%</span>
+      <small>HOSHI VALLEY · FOUR SEASONS · ONE PROMISE</small>
+    </div>
+    <main id="menu" class="hidden">
+      <header class="menu-header">
+        <a class="wordmark" href="#" aria-label="Kitefall home"
+          ><svg viewBox="0 0 42 35"><path d="M21 2 40 28 21 20 2 28Z" /></svg>
+          KESTREL<span>TACTICAL OPERATIONS</span></a
+        >
+        <div class="header-right">
+          <span class="status-dot"></span> SYSTEM ONLINE
+          <span class="separator">/</span> HOSHI VALLEY
+          <button
+            id="sound-menu"
+            class="icon-button"
+            title="Toggle sound"
+            aria-label="Toggle sound"
+          >
+            ♫</button
+          ><button
+            id="help-menu"
+            class="icon-button"
+            title="Field manual"
+            aria-label="Open field manual"
+          >
+            ?
+          </button>
+        </div>
+      </header>
+      <section class="hero">
+        <div class="eyebrow">
+          <span class="tiny-line"></span> A KESTREL STORY
+        </div>
+        <h1>KITE<span>FALL</span><i>01—04</i></h1>
+        <p class="hero-tagline">
+          The sky is your way in.<br />Getting them home is the mission.
+        </p>
+        <p class="hero-description">
+          One commando. A stolen kite drone. A valley that refuses to fall.<br />Rise
+          above the occupation. Leave no one behind.
+        </p>
+        <div class="hero-actions">
+          <button id="deploy" class="primary">
+            BEGIN OPERATION <span>↗</span></button
+          ><button id="briefing" class="text-button">
+            MISSION BRIEF <span>+</span>
+          </button>
+        </div>
+        <div class="input-note">
+          <span class="mouse-icon"></span> MOUSE + KEYBOARD
+          <span>·</span> HEADPHONES RECOMMENDED
+        </div>
+      </section>
+      <aside class="mission-preview">
+        <div class="eyebrow">
+          ACTIVE THEATER <span id="preview-number">01 / 04</span>
+        </div>
+        <div class="preview-rule"></div>
+        <div class="preview-coordinates">
+          35° 41′ N &nbsp; 139° 41′ E &nbsp; / &nbsp; FICTIONAL AO
+        </div>
+        <h2 id="preview-title">FIRST LIGHT</h2>
+        <p id="preview-place">Kawabe foothills</p>
+        <div class="preview-features">
+          <div>
+            <b>087<span>M</span></b
+            ><small>INSERTION ALTITUDE</small>
+          </div>
+          <div>
+            <b id="preview-season">SPR</b><small>SEASONAL CONDITIONS</small>
+          </div>
+        </div>
+        <div class="preview-footer">
+          <span class="status-dot"></span>
+          <span id="preview-state">READY FOR INSERTION</span><span>↗</span>
+        </div>
+      </aside>
+      <div class="scene-caption">
+        <i></i><span id="scene-caption">SPRING / FIRST LIGHT</span
+        ><small>LIVE RECON FEED</small>
+      </div>
+      <section class="campaign-strip" aria-label="Select campaign chapter">
+        <div class="strip-heading">
+          <span>THE HOSHI CAMPAIGN</span
+          ><span id="campaign-progress">00 / 04 OPERATIONS COMPLETE</span>
+        </div>
+        <div id="chapters" class="chapters"></div>
+      </section>
+      <footer class="menu-footer">
+        <span
+          >KESTREL K-9 <span class="muted">/</span> AERIAL INFILTRATION
+          SYSTEM</span
+        ><span>SCOUT <i>→</i> STRIKE <i>→</i> RESCUE <i>→</i> EXTRACT</span
+        ><span>BUILD 1.0</span>
+      </footer>
+    </main>
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <div class="hud-brand">
+          K<span>F</span>
+          <div>
+            <b id="hud-operation">FIRST LIGHT</b
+            ><small id="hud-location">KAWABE FOOTHILLS</small>
+          </div>
+        </div>
+        <div class="compass">
+          <div class="compass-ticks">
+            W &nbsp; · &nbsp; · &nbsp; NW &nbsp; · &nbsp; · &nbsp;
+            <b id="heading">000</b> &nbsp; · &nbsp; · &nbsp; NE &nbsp; · &nbsp;
+            · &nbsp; E
+          </div>
+          <i>▴</i><small id="alert-label">UNDETECTED</small>
+        </div>
+        <div class="hud-status">
+          <span id="hud-season">SPRING / 07:42</span
+          ><b id="flight-status">KESTREL ONLINE</b
+          ><small>ESC PAUSE &nbsp; / &nbsp; H FIELD MANUAL</small>
+        </div>
+      </div>
+      <section class="objectives">
+        <div class="eyebrow">
+          OPERATION OBJECTIVES <span id="objective-total">0 / 5</span>
+        </div>
+        <div id="objective-list"></div>
+        <div id="extract-objective" class="extract-objective">
+          ◇ &nbsp; Extract at the south beacon
+        </div>
+      </section>
+      <div id="markers"></div>
+      <div id="reticle" class="reticle"><i></i><b></b></div>
+      <div id="hit-marker" class="hidden">╳</div>
+      <div id="scope" class="hidden">
+        <div class="scope-circle">
+          <div class="scope-horizontal"></div>
+          <div class="scope-vertical"></div>
+          <div class="scope-mil">┼<br />┼<br />┼<br />┼</div>
+          <span class="scope-label">LONGWATCH / OPTICAL SYSTEM</span
+          ><span id="scope-data">5× &nbsp; RANGE —</span
+          ><span class="scope-bottom"
+            >SCROLL TO ADJUST &nbsp; / &nbsp; 3×–12×</span
+          >
+        </div>
+      </div>
+      <div id="damage-overlay"></div>
+      <div id="interact" class="hidden"><kbd>E</kbd><span></span></div>
+      <div id="toast" role="status" class="hidden"></div>
+      <div class="hud-bottom-left">
+        <div class="minimap-head"><span>TACTICAL UPLINK</span><b>N ↑</b></div>
+        <canvas
+          id="minimap"
+          width="210"
+          height="172"
+          aria-label="Tactical minimap"
+        ></canvas>
+        <div class="vitals">
+          <div>
+            <b>+</b><span id="health-value">100</span>
+            <div class="vital-track"><i id="health-bar"></i></div>
+            <small>HEALTH</small>
+          </div>
+          <div>
+            <b>◇</b><span id="armor-value">100</span>
+            <div class="vital-track armor"><i id="armor-bar"></i></div>
+            <small>ARMOR</small>
+          </div>
+        </div>
+      </div>
+      <div class="flight-instruments">
+        <div class="altitude">
+          <b id="altitude">087</b><span>M<br />AGL</span>
+        </div>
+        <div class="altitude-scale">┊<br />┊<br />┊<br />┊<br />┊</div>
+        <span id="movement-status">HOVER</span
+        ><small>SPACE ↑<br />CTRL / Q ↓<br />G FOLD KITE</small>
+      </div>
+      <div class="hud-bottom-center">
+        <div id="weapon-slots"></div>
+        <div class="control-hint">
+          <kbd>RMB</kbd> AIM <span>·</span><kbd>LMB</kbd> FIRE <span>·</span
+          ><kbd>R</kbd> RELOAD <span>·</span><kbd>F</kbd> RECON PULSE
+        </div>
+      </div>
+      <div class="weapon-panel">
+        <div id="weapon-kind">PRECISION RIFLE</div>
+        <h2 id="weapon-name">LONGWATCH</h2>
+        <div class="ammo">
+          <b id="ammo">06</b><span>/ <i id="reserve">042</i></span
+          ><small id="reload-state">READY</small>
+        </div>
+        <div class="weapon-rule"></div>
+        <small id="weapon-extra">SUPPRESSED REPORT · LONG RANGE</small>
+      </div>
+      <div id="radio" class="hidden">
+        <div class="radio-wave">▂▆▃█▅▂</div>
+        <div>
+          <b id="radio-name">ATLAS / COMMAND</b>
+          <p id="radio-text"></p>
+        </div>
+      </div>
+    </div>
+    <div id="overlay" class="hidden"><section id="panel"></section></div>
+    <aside id="quick-help" class="hidden"></aside>
+    <div id="fatal" class="hidden" role="alert"></div>
+  </body>
+</html>
