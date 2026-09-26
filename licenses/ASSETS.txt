@@ -2,8 +2,10 @@ KITEFALL reuses the Hoshi Valley environment and Blender models from the
 owner's 3D_game_scene project:
 https://github.com/buicongnguyen/3D_game_scene
 
-The fighting game adds procedural characters, weapons, drone, fortifications,
-campaign logic, controls, interface and synthesized sound.
+The fighting game adds Blender-authored characters, weapons, a kite drone,
+fortifications and supplies, using the reference project's geometry and
+ambient-occlusion toolkit. It also adds campaign logic, controls, interface
+and synthesized sound. Editable Blender sources are maintained separately.
 
 Original authorship and distribution terms apply to the reused assets. No
 additional asset license is asserted here. Third-party software notices are

@@ -6,4 +6,4 @@ This repository contains the compiled browser game and runtime assets. Editable 
 
 KITEFALL reuses Hoshi Valley assets from the owner's 3D_game_scene project. See licenses/ASSETS.txt for provenance and licenses/ for third-party notices.
 
-Source revision: 782159027bb2f2b38eb2331ee424d889073492eb
+Source revision: d59fba7d41d26b718aae2dac46f8aeee4441751a
