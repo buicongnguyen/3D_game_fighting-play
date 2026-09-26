@@ -13,8 +13,8 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23dbe6ad' d='M20 2 38 26 20 19 2 26Z'/%3E%3Cpath stroke='%23dbe6ad' d='m20 19-3 15 7 4'/%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-Bu5l2Al0.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CTnyxEv_.css">
+    <script type="module" crossorigin src="./assets/index-BtJ2N45H.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BfOO1yw8.css">
   </head>
   <body>
     <canvas id="game" aria-label="KITEFALL 3D game world"></canvas>
@@ -144,6 +144,17 @@
             <span>NE</span> &nbsp; · &nbsp; · &nbsp; <span>E</span>
           </div>
           <i>▴</i><small id="alert-label">UNDETECTED</small>
+          <div
+            class="detection-track"
+            role="meter"
+            aria-label="Enemy detection"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+            id="detection-meter"
+          >
+            <b id="detection-fill"></b>
+          </div>
         </div>
         <div class="hud-status">
           <span id="hud-season">SPRING / 07:42</span
@@ -152,10 +163,24 @@
         </div>
       </div>
       <section class="objectives">
+        <div class="mission-focus">
+          <small id="focus-phase">01 / RECON</small
+          ><b id="focus-title">Clear rooftop overwatch</b>
+          <span id="focus-bearing"></span>
+          <p id="focus-hint"></p>
+        </div>
         <div class="eyebrow">
           OPERATION OBJECTIVES <span id="objective-total">0 / 5</span>
         </div>
         <div id="objective-list"></div>
+        <div class="relay-objective">
+          <b id="relay-status">OPTIONAL / SABOTAGE RELAY</b
+          ><span id="relay-hint">Stop shared alerts · +600 on extraction</span>
+        </div>
+        <div id="radio-call" class="radio-call hidden" role="status">
+          <b id="radio-countdown"></b
+          ><span>Break sight or stop the marked caller</span>
+        </div>
         <div id="rescue-status" class="rescue-status">TEAM 0/3 ABOARD</div>
         <div id="extract-objective" class="extract-objective">
           ◇ &nbsp; Extract at the south beacon
