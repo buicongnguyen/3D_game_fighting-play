@@ -16,8 +16,8 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23dbe6ad' d='M20 2 38 26 20 19 2 26Z'/%3E%3Cpath stroke='%23dbe6ad' d='m20 19-3 15 7 4'/%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-DWhDk7qK.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DrWIHINr.css">
+    <script type="module" crossorigin src="./assets/index-DtSgsUzJ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CteezkCN.css">
   </head>
   <body>
     <canvas id="game" aria-label="KITEFALL 3D game world"></canvas>
@@ -235,17 +235,17 @@
         <div class="touch-actions">
           <button data-touch="KeyG" id="touch-kite">Kite / Land</button
           ><button data-touch="Space" id="touch-up">Up</button
-          ><button data-touch="KeyQ">Down</button>
+          ><button data-touch="KeyQ" id="touch-down">Down</button>
           <button data-touch="scope" id="touch-scope" aria-pressed="false">
             Scope</button
           ><button data-touch="fire" id="touch-fire">Fire</button
-          ><button data-touch="KeyE">Use</button>
+          ><button data-touch="KeyE" id="touch-use">Use</button>
           <button data-touch="zoom-out" aria-label="Zoom out">− Zoom</button
           ><button data-touch="zoom-in" aria-label="Zoom in">+ Zoom</button
-          ><button data-touch="KeyR">Reload</button>
+          ><button data-touch="KeyR" id="touch-reload">Reload</button>
           <button data-touch="KeyT" id="touch-heat" aria-pressed="false">
             Heat</button
-          ><button data-touch="KeyC">Crouch</button
+          ><button data-touch="KeyC" id="touch-crouch">Crouch</button
           ><button data-touch="ShiftLeft" id="touch-boost">Boost</button>
         </div>
         <span class="touch-look-hint">DRAG THE VIEW TO LOOK</span>
@@ -274,7 +274,9 @@
         </div>
       </div>
       <div id="damage-overlay"></div>
-      <div id="interact" class="hidden"><kbd>E</kbd><span></span></div>
+      <button id="interact" class="hidden" aria-keyshortcuts="E">
+        <kbd>E</kbd><span></span>
+      </button>
       <div id="toast" role="status" class="hidden"></div>
       <div class="hud-bottom-left">
         <div class="minimap-head"><span>TACTICAL UPLINK</span><b>N ↑</b></div>
@@ -302,7 +304,9 @@
           <div class="altitude">
             <b id="altitude">087</b><span>M<br />AGL</span>
           </div>
-          <span id="movement-status">HOVER</span>
+          <button id="movement-status" aria-keyshortcuts="G">
+            <kbd>G</kbd><span id="flight-short-label">Land</span>
+          </button>
         </div>
         <section
           id="context-controls"
@@ -328,7 +332,7 @@
             aria-keyshortcuts="B"
             title="B: return to walking · Tab: show cursor"
           >
-            <span>Exit sniper</span><kbd>B</kbd>
+            <span id="sniper-button-label">Exit sniper</span><kbd>B</kbd>
           </button>
           <button
             id="flight-toggle"
@@ -345,7 +349,9 @@
         <h2 id="weapon-name">LONGWATCH</h2>
         <div class="ammo">
           <b id="ammo">06</b><span>/ <i id="reserve">042</i></span
-          ><small id="reload-state">READY</small>
+          ><button id="reload-state" aria-keyshortcuts="R" disabled>
+            READY
+          </button>
         </div>
         <div class="weapon-rule"></div>
         <small id="weapon-extra">SUPPRESSED REPORT · LONG RANGE</small>
