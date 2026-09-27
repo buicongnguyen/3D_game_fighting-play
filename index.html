@@ -16,8 +16,8 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23dbe6ad' d='M20 2 38 26 20 19 2 26Z'/%3E%3Cpath stroke='%23dbe6ad' d='m20 19-3 15 7 4'/%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-VmfVe22l.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DBV-V_EB.css">
+    <script type="module" crossorigin src="./assets/index-pjDJB521.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BzPRPAIH.css">
   </head>
   <body>
     <canvas id="game" aria-label="KITEFALL 3D game world"></canvas>
@@ -298,18 +298,26 @@
         </div>
       </div>
       <div class="flight-instruments">
-        <div class="altitude">
-          <b id="altitude">087</b><span>M<br />AGL</span>
+        <div class="flight-readout">
+          <div class="altitude">
+            <b id="altitude">087</b><span>M<br />AGL</span>
+          </div>
+          <span id="movement-status">HOVER</span>
         </div>
-        <div class="altitude-scale">┊<br />┊<br />┊<br />┊<br />┊</div>
-        <span id="movement-status">HOVER</span
-        ><small>SPACE ↑<br />CTRL / Q ↓<br />G KITE / LAND</small>
+        <section
+          id="context-controls"
+          aria-label="Controls for your current mode"
+        >
+          <div id="control-phase"></div>
+          <div id="control-primary"></div>
+          <div id="control-secondary"></div>
+        </section>
       </div>
       <div class="hud-bottom-center">
         <div id="weapon-slots"></div>
         <div class="control-hint">
-          <kbd>RMB</kbd> AIM <span>·</span><kbd>LMB</kbd> FIRE <span>·</span
-          ><kbd>R</kbd> RELOAD <span>·</span><kbd>F</kbd> RECON PULSE
+          <kbd>J</kbd> TASKS <span>·</span><kbd>H</kbd> ALL CONTROLS
+          <span>·</span><kbd>TAB</kbd> CURSOR
         </div>
       </div>
       <div class="landing-control">
