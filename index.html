@@ -16,8 +16,8 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23dbe6ad' d='M20 2 38 26 20 19 2 26Z'/%3E%3Cpath stroke='%23dbe6ad' d='m20 19-3 15 7 4'/%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-CsTS2tgp.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-OB0XIHGM.css">
+    <script type="module" crossorigin src="./assets/index-C4vX8C5H.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DH5Ipke-.css">
   </head>
   <body>
     <canvas id="game" aria-label="KITEFALL 3D game world"></canvas>
@@ -234,7 +234,7 @@
         </div>
         <div class="touch-actions">
           <button data-touch="KeyG" id="touch-kite">Kite / Land</button
-          ><button data-touch="Space">Up</button
+          ><button data-touch="Space" id="touch-up">Up</button
           ><button data-touch="KeyQ">Down</button>
           <button data-touch="scope" id="touch-scope" aria-pressed="false">
             Scope</button
@@ -246,7 +246,7 @@
           <button data-touch="KeyT" id="touch-heat" aria-pressed="false">
             Heat</button
           ><button data-touch="KeyC">Crouch</button
-          ><button data-touch="ShiftLeft">Boost</button>
+          ><button data-touch="ShiftLeft" id="touch-boost">Boost</button>
         </div>
         <span class="touch-look-hint">DRAG THE VIEW TO LOOK</span>
       </div>
@@ -313,13 +313,23 @@
         </div>
       </div>
       <div class="landing-control">
-        <button
-          id="flight-toggle"
-          aria-keyshortcuts="G"
-          title="G: land / fly · Tab: show cursor"
-        >
-          <span id="flight-label">Land</span><kbd>G</kbd>
-        </button>
+        <div class="flight-actions">
+          <button
+            id="exit-sniper"
+            class="hidden"
+            aria-keyshortcuts="B"
+            title="B: return to walking · Tab: show cursor"
+          >
+            Exit sniper
+          </button>
+          <button
+            id="flight-toggle"
+            aria-keyshortcuts="G"
+            title="G: land / fly · Tab: show cursor"
+          >
+            <span id="flight-label">Land</span><kbd>G</kbd>
+          </button>
+        </div>
         <small id="flight-cursor-hint">TAB · show cursor to click</small>
       </div>
       <div class="weapon-panel">
