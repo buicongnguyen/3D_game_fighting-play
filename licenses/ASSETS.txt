@@ -3,7 +3,7 @@ owner's 3D_game_scene project:
 https://github.com/buicongnguyen/3D_game_scene
 
 The fighting game adds Blender-authored characters, weapons, a kite drone,
-fortifications, supplies, a rescue helicopter and explosive props/effects, using the reference project's geometry and
+fortifications, supplies, field chairs, a rescue helicopter and explosive props/effects, using the reference project's geometry and
 ambient-occlusion toolkit. It also adds campaign logic, controls, interface
 and synthesized sound. Editable Blender sources are maintained separately.
 
