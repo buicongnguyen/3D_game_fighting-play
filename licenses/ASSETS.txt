@@ -10,3 +10,6 @@ and synthesized sound. Editable Blender sources are maintained separately.
 Original authorship and distribution terms apply to the reused assets. No
 additional asset license is asserted here. Third-party software notices are
 included in this directory.
+
+The scenic gallery adapts the owner's Starline Star Train and glowing stroke
+art (cel-train.js and cel-lines.js) to this game's shared particle atlas.

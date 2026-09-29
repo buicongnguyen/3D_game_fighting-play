@@ -16,8 +16,8 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%233fe0c5' d='M20 2 38 26 20 19 2 26Z'/%3E%3Cpath stroke='%23ffb547' stroke-width='2' fill='none' d='m20 19-3 15 7 4'/%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-B3HX1uq0.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DQ6H9L0F.css">
+    <script type="module" crossorigin src="./assets/index-BuB_NUHZ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-R2MkxOoz.css">
   </head>
   <body>
     <canvas id="game" aria-label="KITEFALL 3D game world"></canvas>
@@ -165,6 +165,21 @@
       </div>
     </section>
 
+    <section id="scenic-flight" class="hidden" aria-label="Scenic flight">
+      <div class="scenic-caption"><small id="scenic-season"></small><h2 id="scenic-title"></h2></div>
+      <div class="scenic-toolbar">
+        <progress id="scenic-progress" max="48" value="0" aria-label="Flight progress"></progress>
+        <div class="scenic-buttons">
+          <button id="scenic-pause" aria-keyshortcuts="P">Pause</button>
+          <button id="scenic-replay">Replay</button>
+          <button id="scenic-record">Record flight</button>
+          <a id="scenic-download" class="hidden" data-nav download>Save video</a>
+          <button id="scenic-back" aria-keyshortcuts="Escape">Back</button>
+        </div>
+        <p id="scenic-status" role="status"></p>
+        <small class="scenic-shortcuts"><span>P · Pause / Resume</span> &nbsp; <span>Esc · Back</span></small>
+      </div>
+    </section>
     <div id="fatal" class="hidden" role="alert"></div>
   </body>
 </html>
