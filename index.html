@@ -16,8 +16,8 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%233fe0c5' d='M20 2 38 26 20 19 2 26Z'/%3E%3Cpath stroke='%23ffb547' stroke-width='2' fill='none' d='m20 19-3 15 7 4'/%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-B58FCls0.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-hTZ_BvmT.css">
+    <script type="module" crossorigin src="./assets/index-W2FZzLx4.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CZSXdMRV.css">
   </head>
   <body>
     <canvas id="game" aria-label="KITEFALL 3D game world"></canvas>
@@ -70,7 +70,6 @@
       </section>
 
       <div id="mission-title" class="mission-title hidden" aria-live="polite"></div>
-      <div id="toast" role="status" class="hidden"></div>
       <div id="killfeed" aria-live="polite"></div>
       <div id="checkpoint" class="hidden"></div>
 
@@ -79,15 +78,11 @@
       <div id="hit-marker" class="hidden"></div>
       <div id="damage-overlay"></div>
       <div id="damage-arcs"></div>
-      <div id="structure-hud" class="structure-hud hidden"></div>
 
       <div id="scope" class="hidden">
         <div class="scope-circle">
           <div class="scope-horizontal"></div>
           <div class="scope-vertical"></div>
-          <span id="scope-label" class="scope-label"></span>
-          <span id="scope-data"></span>
-          <span id="scope-help" class="scope-bottom"></span>
         </div>
       </div>
 
@@ -96,8 +91,17 @@
         <span id="flight-status"></span>
       </div>
 
-      <div id="interact" class="interact-prompt hidden" role="button" aria-keyshortcuts="E"></div>
-      <div id="hint" class="control-hint hidden"></div>
+      <div id="hud-messages">
+        <div id="toast" role="status" class="hidden"></div>
+        <div id="hint" class="control-hint hidden"></div>
+        <div id="interact" class="interact-prompt hidden" role="button" aria-keyshortcuts="E"></div>
+        <div id="structure-hud" class="structure-hud hidden"></div>
+        <div id="scope-readouts">
+          <span id="scope-label" class="scope-label"></span>
+          <span id="scope-data"></span>
+          <span id="scope-help" class="scope-bottom"></span>
+        </div>
+      </div>
 
       <section class="hud-vitals" aria-label="Health and map">
         <canvas id="minimap" width="200" height="200" aria-label="Tactical minimap"></canvas>
